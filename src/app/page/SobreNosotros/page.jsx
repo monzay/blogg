@@ -1,6 +1,6 @@
 'use client'
 
-import { useContext, useState } from 'react'
+import { useContext } from 'react'
 import Image from 'next/image'
 import traducciones from  "../../../json/sobreNosotrosIdiomas"
 import { CambiarIdiomaContexto } from '../../Providers/CambiarIdiomaContexto'
@@ -15,7 +15,7 @@ export default function SobreNosotros() {
 
 
 
-  return (
+  return ( 
     <div className="min-h-screen bg-gray-50">
       <main className="container mx-auto px-4 py-8">
         <section className="mb-12">
@@ -46,8 +46,8 @@ export default function SobreNosotros() {
           <h2 className="text-2xl font-semibold mb-6">{t.equipo}</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
             {t.equipoMiembros.map((miembro, index) => (
-                <Link  href={miembro.link}>
-             <div style={{cursor:"pointer"}} key={index} className="bg-white rounded-lg shadow-md p-6 text-center">
+                <Link key={index} href={miembro.link}>
+             <div style={{cursor:"pointer"}}  className="bg-white rounded-lg shadow-md p-6 text-center">
                 <Image
                   src={miembro.imagen}
                   alt={miembro.nombre}
